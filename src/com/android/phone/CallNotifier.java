@@ -399,7 +399,12 @@ public class CallNotifier extends Handler
             PhoneUtils.hangupRingingCall(ringing);
             return;
         }
-
+        if(c.isIncoming()){
+            if(BlackListUtil.isBlackListed(mApplication,c.getAddress())){
+                PhoneUtils.hangupRingingCall(ringing);
+                return;
+            }
+        }
         if (!c.isRinging()) {
             Log.i(LOG_TAG, "CallNotifier.onNewRingingConnection(): connection not ringing!");
             // This is a very strange case: an incoming call that stopped

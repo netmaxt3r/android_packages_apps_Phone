@@ -75,6 +75,18 @@
       android:title="@string/other_settings"
       android:persistent="false" />
 
+	<PreferenceScreen
+	    android:defaultValue="false"
+	    android:key="button_blacklist_key"
+	    android:persistent="true"
+	    android:summary="@string/blacklist_summary"
+	    android:title="@string/blacklist_title" >
+	    <intent
+	        android:action="android.intent.action.MAIN"
+	        android:targetClass="com.android.phone.BlackListActivity"
+	        android:targetPackage="com.android.phone" />
+	</PreferenceScreen>
+
   <PreferenceScreen
       android:key="button_voicemail_category_key"
       android:title="@string/voicemail"

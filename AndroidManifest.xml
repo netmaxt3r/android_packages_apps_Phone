@@ -441,7 +441,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
+		<activity android:name="BlackListActivity"
+                android:label="@string/blacklist_title"
+                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:theme="@android:style/Theme.Holo.DialogWhenLarge">
+        </activity>
         <!-- bluetooth headset service -->
         <service android:name="BluetoothHeadsetService">
             <intent-filter>
